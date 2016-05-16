@@ -70,10 +70,10 @@ namespace PruebaSCI.Business.Repositorios
                 {
                     var piloto = new Piloto
                     {
-                        Equipo = new Equipo { Id = reader.GetGuid(4) },
+                        Equipo = new Equipo { Id = reader.GetGuid(4), Nombre = reader.GetString(7) },
                         Id = reader.GetGuid(0),
                         NumeroCarro = reader.GetInt32(2),
-                        Nacionalidad = new Pais { Id = reader.GetGuid(5) },
+                        Nacionalidad = new Pais { Id = reader.GetGuid(5), Nombre = reader.GetString(6) },
                         FechaNacimiento = reader.GetDateTime(3),
                         Nombre = reader.GetString(1)
                     };
@@ -131,10 +131,10 @@ namespace PruebaSCI.Business.Repositorios
                 {
                     piloto = new Piloto
                     {
-                        Equipo = new Equipo { Id = reader.GetGuid(4) },
+                        Equipo = new Equipo { Id = reader.GetGuid(4), Nombre = reader.GetString(7) },
                         Id = reader.GetGuid(0),
                         NumeroCarro = reader.GetInt32(2),
-                        Nacionalidad = new Pais { Id = reader.GetGuid(5) },
+                        Nacionalidad = new Pais { Id = reader.GetGuid(5), Nombre = reader.GetString(6) },
                         FechaNacimiento = reader.GetDateTime(3),
                         Nombre = reader.GetString(1)
                     };

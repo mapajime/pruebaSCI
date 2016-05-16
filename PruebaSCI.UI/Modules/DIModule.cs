@@ -15,6 +15,13 @@ namespace PruebaSCI.UI.Modules
             builder.RegisterType<NacionalidadRepositorio>().As<INacionalidadRepositorio>().PropertiesAutowired().InstancePerRequest();
             builder.RegisterType<NacionalidadServicio>().As<INacioanlidadServicio>().PropertiesAutowired().InstancePerRequest();
 
+            builder.RegisterType<EquipoRepositorio>().As<IEquipoRepositorio>().PropertiesAutowired().InstancePerRequest();
+            builder.RegisterType<EquipoServicio>().As<IEquipoServicio>().PropertiesAutowired().InstancePerRequest();
+
+
+            builder.RegisterType<PilotoRepositorio>().As<IPilotoRepositorio>().PropertiesAutowired().InstancePerRequest();
+            builder.RegisterType<PilotoServicio>().As<IPilotoServicio>().PropertiesAutowired().InstancePerRequest();
+
             base.Load(builder);
         }
     }

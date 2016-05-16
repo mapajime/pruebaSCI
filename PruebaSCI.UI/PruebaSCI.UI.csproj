@@ -173,7 +173,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\EquipoController.cs" />
+    <Compile Include="Controllers\PilotoController.cs" />
     <Compile Include="Models\EquipoModel.cs" />
+    <Compile Include="Models\PilotoModel.cs" />
     <Compile Include="Modules\DIModule.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -251,6 +253,12 @@
     <Content Include="Views\Pais\Delete.cshtml" />
     <Content Include="Views\Equipo\Index.cshtml" />
     <Content Include="Views\Equipo\Create.cshtml" />
+    <Content Include="Views\Equipo\Edit.cshtml" />
+    <Content Include="Views\Equipo\Delete.cshtml" />
+    <Content Include="Views\Piloto\Create.cshtml" />
+    <Content Include="Views\Piloto\Edit.cshtml" />
+    <Content Include="Views\Piloto\Delete.cshtml" />
+    <Content Include="Views\Piloto\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

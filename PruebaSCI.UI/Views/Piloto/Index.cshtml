@@ -1,0 +1,56 @@
+﻿@model IEnumerable<PruebaSCI.UI.Models.PilotoModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Pilotos</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nacionalidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroCarro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaNacimeinto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Equipo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombrePais)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroCarro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaNacimeinto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreEquipo)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

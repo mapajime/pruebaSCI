@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using AutoMapper;
 using PruebaSCI.Business.Servicios;
 using PruebaSCI.UI.Models;
+using PruebaSCI.Business.DTO;
 
 namespace PruebaSCI.UI.Controllers
 {
@@ -39,8 +40,8 @@ namespace PruebaSCI.UI.Controllers
         {
             try
             {
-                
 
+                EquipoServicio.Insertar(Mapper.Map<EquipoDTO>(model));
                 return RedirectToAction("Index");
             }
             catch
@@ -50,18 +51,19 @@ namespace PruebaSCI.UI.Controllers
         }
 
         // GET: Equipo/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(Guid id)
         {
-            return View();
+            var model = Mapper.Map<EquipoModel>(EquipoServicio.ObtenerPorId(id));
+            return View(model);
         }
 
         // POST: Equipo/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Guid id, EquipoModel model)
         {
             try
             {
-                // TODO: Add update logic here
+                EquipoServicio.Actualizar(Mapper.Map<EquipoDTO>(model));
 
                 return RedirectToAction("Index");
             }
@@ -72,18 +74,19 @@ namespace PruebaSCI.UI.Controllers
         }
 
         // GET: Equipo/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(Guid id)
         {
-            return View();
+            var model = Mapper.Map<EquipoModel>(EquipoServicio.ObtenerPorId(id));
+            return View(model);
         }
 
         // POST: Equipo/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(Guid id, EquipoModel model)
         {
             try
             {
-                // TODO: Add delete logic here
+                EquipoServicio.Borrar(model.Id);
 
                 return RedirectToAction("Index");
             }

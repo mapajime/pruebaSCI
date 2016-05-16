@@ -57,7 +57,6 @@ namespace PruebaSCI.UI.Controllers
             try
             {
                 NacionalidadServicio.Actualizar(Mapper.Map<PaisDTO>(model));
-
                 return RedirectToAction("Index");
             }
             catch
